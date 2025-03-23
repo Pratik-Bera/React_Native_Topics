@@ -1,0 +1,71 @@
+** Setup is Little bit trickey just go with the flow.
+** Documentation Link: "https://www.npmjs.com/package/react-native-vector-icons" 
+** can explore another Icon library like FontAwesome, MaterialCommunityIcons, Ionicons etc...
+
+You can use react-native-vector-icons in your React Native project to display icons from various icon sets like MaterialIcons, FontAwesome, Ionicons, etc.
+
+
+Step1:
+
+        Installation: yarn add react-native-vector-icons / npm install react-native-vector-icons --save
+
+Step2: Edit "android/app/build.gradle"
+        apply from: "../../node_modules/react-native-vector-icons/fonts.gradle"
+
+        ** Reference: build.gradle
+
+Step3: iOS Configuration(Not Implemented by myself)
+        cd ios && pod install && cd ..
+        If icons are missing, manually add fonts:
+
+        Open Xcode → Your Project → Info.plist
+        ADD
+
+********************
+        <key>UIAppFonts</key>
+            <array>
+                <string>AntDesign.ttf</string>
+                <string>Entypo.ttf</string>
+                <string>EvilIcons.ttf</string>
+                <string>Feather.ttf</string>
+                <string>FontAwesome.ttf</string>
+                <string>FontAwesome5_Brands.ttf</string>
+                <string>FontAwesome5_Regular.ttf</string>
+                <string>FontAwesome5_Solid.ttf</string>
+                <string>Fontisto.ttf</string>
+                <string>Foundation.ttf</string>
+                <string>Ionicons.ttf</string>
+                <string>MaterialIcons.ttf</string>
+                <string>MaterialCommunityIcons.ttf</string>
+                <string>SimpleLineIcons.ttf</string>
+                <string>Octicons.ttf</string>
+                <string>Zocial.ttf</string>
+            </array>
+
+*************************
+
+Step4: Import and use an icon from any icon set:
+src/MyComponent.tsx
+
+    import React from 'react';
+    import { View, Text } from 'react-native';
+    import Icon from 'react-native-vector-icons/MaterialIcons';               => Import Icon from "react-native-vector-icons/MaterialIcons"
+
+    const MyComponent = () => {
+      return (
+        <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+          <Icon name="home" size={30} color="blue" />                          => Usage Icon
+          <Text style={{ marginLeft: 10 }}>Home</Text>
+       </View>
+     );
+    };
+
+export default MyComponent;
+
+
+References: Hamburger.tsx
+
+
+** @1 "import Icon from 'react-native-vector-icons/MaterialIcons';" That Line will red like error indicating for typeScript but not Issue . That is happens for Type Declaretion.
+** @2 : can explore icons not only MaterialCommunityIcons but available FontAwesome, Ionicons, etc.
+
