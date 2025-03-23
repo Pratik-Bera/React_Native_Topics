@@ -1,0 +1,13 @@
+** @The Problem is to support gif file at react native components. Cause when we give the references of a .gif file at <Image/> Tag
+that just shows a static image of gif , not the mooving gif file so we need to follow some steps to use .gif at components.
+
+
+SUPPORT GIF TO ANDROID:  We need to add a dependency to the "build.gradle" file which is located at "@/android/app/build.gradle"
+    we need to add the below line at the end of the file. Just check once the the version of fresco for compatiblity with 
+    react native versions.
+
+                            implementation ("com.facebook.fresco:animated-gif:3.1.0")
+    
+Reference: build.gradle(For dependency add file.) and AddGifImage.tsx (For use Gif at components).
+
+Note: **That is only for android not for IOS. I Have not Implement .gif for IOS.
